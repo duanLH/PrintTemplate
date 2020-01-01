@@ -1,7 +1,10 @@
 {
   "name": "printtemplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/printTemplate.min.js",
+  "homepage": "https://github.com/XXllXX/PrintTemplate",
+  "repository": "https://github.com/XXllXX/PrintTemplate",
+  "author": "xxllxx",
   "license": "MIT",
   "scripts": {
     "build": "browserify  ./out -s printTemplate -t babelify -o dist/printTemplate.js -x zrender -x jspdf -x qrcode -x jsbarcode",
@@ -9,6 +12,13 @@
     "uglify": "uglifyjs dist/printTemplate.js -c -m -o dist/printTemplate.min.js",
     "uglifyAll": "uglifyjs dist/all/printTemplate.js -c -m -o dist/all/printTemplate.min.js"
   },
+  "keywords": [
+    "print",
+    "template",
+    "jsprint",
+    "jsprintTemplate",
+    "pdfTemplate"
+  ],
   "dependencies": {
     "jsbarcode": "^3.11.0",
     "jspdf": "^1.5.3",
