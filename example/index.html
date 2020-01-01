@@ -91,7 +91,7 @@
         let data = []
         this.url = null
         for (let index = 0; index < this.from.num; index++) {
-          data.push({ code: this.from.code, name: this.from.name + index + 1 })
+          data.push({ code: this.from.code, name: this.from.name + (index + 1) })
         }
         this.template.print('expressDelivery1', data).then(pdf => {
           if (pdf) {
