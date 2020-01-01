@@ -124,3 +124,6 @@ pdf.save( fileName ||'打印文件' );
 ```
 
 
+## 例子 
+
+[例子1](https://xxllxx.github.io/PrintTemplate/example/)
