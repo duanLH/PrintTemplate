@@ -1,7 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-<script src="../dist/all/printTemplate.min.js"></script>
+<script src="../dist/all/printTemplate.js"></script>
 <style>
   .main>label {
 
@@ -77,7 +77,7 @@
 
           data: {
             name: { type: 'text', x: 8, y: 45, fontSize: 3.5 },
-            code: { type: 'barcode', x: 7, y: 13, format: 'CODE128A', barcodeWidth: 4, width: 63, margin: 0, fontSize: 1.8, displayValue: true, height: 13 },
+            code: { type: 'barcode', x: 7, y: 13, format: 'CODE128A', width: 4, margin: 0, fontSize: 3.3, fontOptions: 'bold', displayValue: true, height: 13 },
           }
 
         }
@@ -91,7 +91,7 @@
         let data = []
         this.url = null
         for (let index = 0; index < this.from.num; index++) {
-          data.push({ code: this.from.code, name: this.from.name + (index + 1) })
+          data.push({ code: this.from.code + index, name: this.from.name + (index + 1) })
         }
         this.template.print('expressDelivery1', data).then(pdf => {
           if (pdf) {

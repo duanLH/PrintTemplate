@@ -1,13 +1,16 @@
 # PrintTemplate
 
-## 安装
 
+
+## 模板打印-套打
+
+## 安装
 ```
-yarn add printTemplate
+yarn add print-template
 
 或
 
-npm install printTemplate
+npm install print-template
 
 ```
 
@@ -61,10 +64,10 @@ template.push({
       default:'OK111111',   // *默认值  条形码值
       x:10,                 // *x
       y:20,                 // *y
-      width: 25,            // *宽度
+      width: 3,             // *线宽
       height: 25,           // *高度  
       format: 'CODE128A',   // 条形码格式
-      barcodeWidth: 3       // 线宽
+      fontOptions: 'bold'   // 粗体   bold / italic / bold  italic
     },
     {
       type:'qrcode' ,      // *条形码  文本 line / text / image / barcode / qrcode
