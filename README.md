@@ -19,7 +19,7 @@ npm install print-template
 ## 使用
 
 ```
-import printTemplate from 'printTemplate'
+import printTemplate from 'print-template'
 
 
 
@@ -83,10 +83,9 @@ template.push({
       type:'barcode' ,      // 条形码  文本 line / text / image / barcode / qrcode
       x:10,                 // *x
       y:20,                 // *y
-      width: 25,            // *宽度
+      width: 3,            // *线宽度
       height: 25,           // *高度  
       format: 'CODE128A',   // 条形码格式
-      barcodeWidth: 3       // 线宽
     },
     code2:{                 // 传入数据的属性名称
       type:'qrcode' ,       // *条形码  文本 line / text / image / barcode / qrcode
