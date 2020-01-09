@@ -31,7 +31,9 @@
             </el-form-item>
             <el-form-item>
               <el-button type="primary" @click="print">生成打印文件</el-button>
-              <el-button v-if="url" type="success" @click="openPdf">打开生成文件</el-button>
+              <el-button v-if="url" type="success" @click="openPdf">
+                打开生成文件
+              </el-button>
             </el-form-item>
           </el-form>
         </div>
@@ -48,7 +50,7 @@
   var app = new Vue({
     el: '#app',
     data: function () {
-      return { url: '', template: null, from: { num: 1, name: '张三', code: 'YT121212323' } }
+      return { url: '', template: null, from: { num: 10, name: '张三', code: 'YT121212323' } }
     },
     created() {
       this.template = new printTemplate.default()
@@ -85,13 +87,19 @@
     },
     methods: {
       openPdf() {
-        window.open(this.url, '_blank');
+        let link = document.createElement('a')
+        link.href = this.url
+        link.target = '_blank'
+        link.click()
+        console.log(this.url);
+
+        // window.open(this.url, '_blank');
       },
       print() {
         let data = []
         this.url = null
         for (let index = 0; index < this.from.num; index++) {
-          data.push({ code: this.from.code + index, name: this.from.name + (index + 1) })
+          data.push({ code: this.from.code + (index + 1), name: this.from.name + (index + 1) })
         }
         this.template.print('expressDelivery1', data).then(pdf => {
           if (pdf) {
