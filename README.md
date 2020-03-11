@@ -2,6 +2,36 @@
 
 
 
+## 更新 (多页模板)
+
+[例子2](https://xxllxx.github.io/PrintTemplate/example/index1.html)
+
+```
+多页模板属性
+
+{
+
+  name:'template1',
+  unit:'mm',          
+  size:'a4',           
+  multiPage: true,  // treu :  多页模板  false : 默认 单页 
+  // 分页方式  传入打印每行的数据 分配模板打印数据
+  pageMode: function (data) { 
+    // 例子2 判断 存在 phone 属性 打印 当前模板 和 template1 模板
+    if (data.phone) {
+      return [{ name: this.name, data }, { name: 'template1', data: { text: data.phone } }]
+    }
+    // 例子2 判断 不存存在 phone 属性 打印 当前模板 和 template2 模板
+    return [{ name: this.name, data }, { name: 'template2' }]
+  },
+  // 关联 模板 ： 打印时验证存不存在模板 如果为空或模板为空 不生成pdf页
+  linkTemplate: ['template1','template1'],
+  ... // 其他属性
+}
+
+```
+
+
 ## 模板打印-套打
 
 ## 安装
@@ -129,3 +159,5 @@ pdf.save( fileName ||'打印文件' );
 ## 例子 
 
 [例子1](https://xxllxx.github.io/PrintTemplate/example/)
+
+[例子2 (多页模板)](https://xxllxx.github.io/PrintTemplate/example/index1.html)
